@@ -1,13 +1,29 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./custom-styles/index.css";
 
-@custom-variant dark (&:is(.dark *));
+/*@custom-variant dark (&:is(.dark *));*/
 
 @theme inline {
+    /* Core Theme Colors */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-circular-medium);
-    --font-mono: var(--font-geist-mono);
+    --color-main: var(--main-primary);
+    --color-main-hover: var(--main-hover);
+
+    /* Font Mappings */
+    --font-light: var(--font-circular-light);
+    --font-medium: var(--font-circular-medium);
+    --font-bold: var(--font-circular-bold);
+    --font-black: var(--font-circular-black);
+    --font-book: var(--font-circular-book);
+    --font-italic-light: var(--font-circular-italic-light);
+    --font-italic-medium: var(--font-circular-italic-medium);
+    --font-italic-bold: var(--font-circular-italic-bold);
+    --font-italic-black: var(--font-circular-italic-black);
+    --font-italic-book: var(--font-circular-italic-book);
+
+    /* Sidebar Theme */
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -16,11 +32,15 @@
     --color-sidebar-primary: var(--sidebar-primary);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar: var(--sidebar);
+
+    /* Chart Colors */
     --color-chart-5: var(--chart-5);
     --color-chart-4: var(--chart-4);
     --color-chart-3: var(--chart-3);
     --color-chart-2: var(--chart-2);
     --color-chart-1: var(--chart-1);
+
+    /* UI Elements */
     --color-ring: var(--ring);
     --color-input: var(--input);
     --color-border: var(--border);
@@ -37,20 +57,27 @@
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
     --color-card: var(--card);
+
+    /* Radius */
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
 }
 
+
+/* Base Theme Variables */
 :root {
+    /* Core Variables */
     --radius: 0.625rem;
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    /* Color System */
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
     --primary: oklch(0.205 0 0);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
@@ -60,14 +87,24 @@
     --accent: oklch(0.97 0 0);
     --accent-foreground: oklch(0.205 0 0);
     --destructive: oklch(0.577 0.245 27.325);
+
+    /* UI Elements */
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
+
+    /* Chart Colors */
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);
     --chart-4: oklch(0.828 0.189 84.429);
     --chart-5: oklch(0.769 0.188 70.08);
+
+    /* Sidebar */
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
     --sidebar-primary: oklch(0.205 0 0);
@@ -76,16 +113,31 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
-    --font-circular-medium: "CircularMedium", sans-serif;
+
+    /* Custom Colors */
+    --gray-content-negative: oklch(1 0 0);
+    --main-primary: oklch(0.7283 0.1936 146.86);
+    --main-hover: oklch(0.6368 0.167 147.02);
+    --gray-primary-opacity: oklch(1 0 0 / 20%);
+
+    /* Font Family */
+    --font-circular-base: "Circular", sans-serif;
+    --font-circular-book: "CircularBook", var(--font-circular-base);
+    --font-circular-light: "CircularLight", var(--font-circular-base);
+    --font-circular-medium: "CircularMedium", var(--font-circular-base);
+    --font-circular-bold: "CircularBold", var(--font-circular-base);
+    --font-circular-black: "CircularBlack", var(--font-circular-base);
+    --font-circular-italic-book: "CircularBookItalic", var(--font-circular-base);
+    --font-circular-italic-light: "CircularLightItalic", var(--font-circular-base);
+    --font-circular-italic-medium: "CircularMediumItalic", var(--font-circular-base);
+    --font-circular-italic-bold: "CircularBoldItalic", var(--font-circular-base);
+    --font-circular-italic-black: "CircularBlackItalic", var(--font-circular-base);
 }
 
+/* Dark Theme Overrides */
 .dark {
     --background: oklch(0.1448 0 0);
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
     --primary: oklch(0.922 0 0);
     --primary-foreground: oklch(0.205 0 0);
     --secondary: oklch(0.269 0 0);
@@ -95,14 +147,22 @@
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
     --destructive: oklch(0.704 0.191 22.216);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
+
+    /* Dark Theme Chart Colors */
     --chart-1: oklch(0.488 0.243 264.376);
     --chart-2: oklch(0.696 0.17 162.48);
     --chart-3: oklch(0.769 0.188 70.08);
     --chart-4: oklch(0.627 0.265 303.9);
     --chart-5: oklch(0.645 0.246 16.439);
+
+    /* Dark Theme Sidebar */
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
     --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -121,4 +181,22 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+/* Utility Classes */
+.surface-main-primary {
+    background-color: var(--main-primary);
+    transition: background-color 0.6s var(--bezier-custom);
+}
+
+.surface-main-primary:hover {
+    background-color: var(--main-hover);
+}
+
+.background-main-opacity {
+    background-color: var(--gray-primary-opacity);
+}
+
+.color-main-primary {
+    color: var(--main-primary);
 }

@@ -1,0 +1,21 @@
+@import "./beziers.css";
+
+.animate-underline {
+    position: relative;
+    text-decoration: none !important;
+}
+
+.animate-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: 8px;
+    left: 0;
+    background-color: var(--main-primary);
+    transition: width 0.6s var(--bezier-custom);
+}
+
+.animate-underline:hover::after {
+    width: 100%;
+}
