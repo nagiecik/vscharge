@@ -1,64 +1,11 @@
 import React from "react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-
-const sectionContainerClasses = cn(
-  // Layout
-  "flex flex-col",
-  "gap-16",
-  "relative",
-  // Spacing
-  "lg:px-28 md:px-16 px-6",
-  "lg:pt-24 pt-14 pb-8",
-  "lg:m-8 m-4",
-  // Background
-  "bg-secondary",
-  // Visual
-  "rounded-4xl",
-);
-
-const textContainerClasses = cn(
-  // Layout
-  "flex",
-  "flex-col",
-  // Spacing
-  "gap-8",
-  // Alignment
-  "items-center",
-  "lg:items-start",
-  // Typography
-  "text-center",
-  "lg:text-left",
-);
-
-const headingSpanClasses = cn(
-  // Layout
-  "w-fit",
-  // Typography
-  "font-italic-light",
-  "text-main",
-  "inline-block",
-  // Animation
-  "animate-underline",
-  // Cursor & Interaction
-  "cursor-default",
-  "lg:cursor-pointer",
-  "pointer-events-none",
-  "lg:pointer-events-auto",
-);
-
-const headerClasses = cn(
-  // Layout
-  "flex flex-col",
-  // Typography
-  "text-4xl",
-  "lg:text-6xl",
-  "font-medium",
-  "leading-[1.2]",
-  "text-foreground",
-  "w-1/2",
-  "tracking-tighter",
-);
+import {
+  headerClasses,
+  headerContainerClasses,
+  sectionContainerClasses,
+  textContainerClasses,
+} from "./Footer.styles";
 
 const Footer = () => {
   return (
@@ -67,7 +14,7 @@ const Footer = () => {
         <h2 className={headerClasses}>
           Charge your business
           <br /> now with creative
-          <span className={headingSpanClasses}>solutions</span>
+          <span className={headerContainerClasses}>solutions</span>
         </h2>
       </div>
       <div className="w-full h-[1px] bg-foreground/20"></div>

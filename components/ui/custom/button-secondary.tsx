@@ -16,11 +16,11 @@ const ButtonSecondary: React.FC<ButtonSecondaryProps> = ({
       variant="outline"
       className={cn(
         // Typography
-        "font-bold text-base tracking-wide text-foreground hover:text-foreground/60",
+        "font-bold text-base tracking-wide text-foreground hover:text-foreground/70",
         // Dimensions
-        "px-8 py-8 w-fit",
+        "h-16 px-8 w-fit",
         // Visual
-        "rounded-full border-1 !border-foreground hover:!border-foreground/60 !bg-transparent hover:!bg-transparent",
+        "rounded-full border-1 !border-accent !bg-transparent hover:!bg-transparent box-border",
         // "text-white",
         // Cursor & Interaction
         "cursor-default lg:cursor-pointer",
